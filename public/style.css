@@ -1,0 +1,568 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1a1a2e, #2c3e50); /* Gradient background */
+    color: #e0e0e0;
+    text-align: center; /* Center align text */
+}
+
+/* Header Styles */
+header {
+    background-color: rgba(40, 44, 52, 0.8); /* Semi-transparent header */
+    color: white;
+    padding: 1em 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1em;
+}
+
+nav li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav a {
+    color: #61dafb;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #3d424e;
+}
+
+/* Main Content Styles */
+main {
+    padding: 2em;
+    max-width: 800px;
+    margin: 2em auto;
+}
+
+/* Home Section Styles */
+#home .text-container {
+    background-color: rgba(40, 44, 52, 0.8); /* Semi-transparent background */
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    animation: fadeIn 1s ease-out; /* Fade-in animation */
+    line-height: 1.8; /* Increased line height */
+    text-align: justify; /* Justify text */
+}
+
+#home .text-container h2 {
+    color: #61dafb;
+    border-bottom: 2px solid #61dafb;
+    padding-bottom: 0.5em;
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+#home .text-container p {
+    margin-bottom: 1.5em;
+}
+
+/* 3D Solar System Section Styles */
+#solar-system {
+    padding: 50px 20px;
+}
+
+#solar-container {
+    width: 100%;
+    height: 500px;
+    background-color: black;
+    border: 2px solid #5bc0be;
+}
+
+/* Content Section Styles (General Content) */
+.content {
+    background-color: rgba(40, 44, 52, 0.8);
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-out;
+}
+
+.content h2 {
+    color: #61dafb;
+    border-bottom: 2px solid #61dafb;
+    padding-bottom: 0.5em;
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+.content p {
+    line-height: 1.8;
+    margin-bottom: 1.5em;
+    text-align: justify;
+}
+
+.content ol {
+    padding-left: 1.5em;
+    margin-bottom: 2em;
+    list-style-position: outside;
+}
+
+.content li {
+    margin-bottom: 1.2em;
+    line-height: 1.7;
+    padding-left: 0.5em;
+    text-align: left;
+}
+
+.content strong {
+    color: #61dafb;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1c2541;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav li {
+        display: block;
+        margin: 0.5em 0;
+    }
+}
+
+/* ... (your existing CSS styles) ... */
+
+/* Calendar Page Specific Styles */
+#calendar-converter {
+    margin-top: 2em;
+}
+
+#calendar-converter label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+#calendar-converter input[type="text"] {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #5bc0be;
+    background-color: #282c34;
+    color: #e0e0e0;
+}
+
+#calendar-converter button {
+    padding: 0.7em 1.5em;
+    background-color: #5bc0be;
+    color: #1a1a2e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#calendar-converter button:hover {
+    background-color: #f8b400;
+}
+
+#calendar-converter #gregorian-result {
+    margin-top: 1em;
+    padding: 1em;
+    background-color: #282c34;
+    border-radius: 5px;
+}
+
+#calendar-converter {
+    margin-top: 2em;
+}
+
+.date-selector {
+    display: inline-block;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+.date-selector label {
+    display: block;
+    margin-bottom: 0.3em;
+}
+
+.date-selector input[type="number"],
+.date-selector select {
+    padding: 0.5em;
+    border: 1px solid #5bc0be;
+    background-color: #282c34;
+    color: #e0e0e0;
+    border-radius: 5px;
+}
+
+.date-selector input[type="number"] {
+    width: 60px;
+}
+
+.date-selector select {
+    width: 120px;
+}
+
+#calendar-converter button {
+    padding: 0.7em 1.5em;
+    background-color: #5bc0be;
+    color: #1a1a2e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin-top: 1em;
+}
+
+#calendar-converter button:hover {
+    background-color: #f8b400;
+}
+
+#calendar-converter #gregorian-result {
+    margin-top: 1em;
+    padding: 1em;
+    background-color: #282c34;
+    border-radius: 5px;
+}
+
+.day-helper {
+    display: block;
+    font-size: 0.8em;
+    color: #ccc;
+    margin-top: 0.2em;
+}
+
+.instrument {
+    margin-bottom: 2em;
+    padding: 1.5em;
+    border-radius: 8px;
+    background-color: rgba(40, 44, 52, 0.8);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.instrument h3 {
+    color: #f8b400; /* A different accent color for instruments */
+    margin-top: 0;
+    margin-bottom: 0.8em;
+    border-bottom: 1px solid #f8b400;
+    padding-bottom: 0.3em;
+}
+
+.instrument-details {
+    display: flex;
+    gap: 1.5em;
+    align-items: flex-start;
+}
+
+.image-placeholder {
+    width: 200px;
+    height: 150px;
+    background-color: #3d424e;
+    border: 1px dashed #61dafb;
+    color: #61dafb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
+    text-align: center;
+    border-radius: 5px;
+    flex-shrink: 0; /* Prevent image placeholder from shrinking */
+}
+
+.instrument-details p {
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Responsive layout for instrument details */
+@media (max-width: 700px) {
+    .instrument-details {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .image-placeholder {
+        width: 100%;
+        height: auto;
+        padding: 1em;
+        margin-bottom: 1em;
+    }
+}
+
+.astronomer {
+    margin-bottom: 2em;
+    padding: 1.5em;
+    border-radius: 8px;
+    background-color: rgba(40, 44, 52, 0.8);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.astronomer h3 {
+    color: #5bc0be;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid #5bc0be;
+    padding-bottom: 0.2em;
+}
+
+.astronomer-details {
+    display: flex;
+    gap: 1.5em;
+    align-items: flex-start;
+}
+
+.image-placeholder {
+    width: 150px; /* Adjust width as needed */
+    height: 150px; /* Adjust height as needed */
+    background-color: #3d424e;
+    border: 1px dashed #61dafb;
+    color: #61dafb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
+    text-align: center;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.astronomer-details > div {
+    flex-grow: 1; /* Allow text content to take remaining space */
+}
+
+.astronomer p {
+    line-height: 1.7;
+    margin-bottom: 0.8em;
+}
+
+.astronomer ul {
+    list-style-type: disc;
+    padding-left: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.astronomer li {
+    line-height: 1.6;
+    margin-bottom: 0.3em;
+}
+
+/* Responsive layout for astronomer details */
+@media (max-width: 600px) {
+    .astronomer-details {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .image-placeholder {
+        width: 100%;
+        height: auto;
+        padding: 1em;
+        margin-bottom: 1em;
+    }
+}
+
+.image-container {
+    width: 150px; /* Adjust width as needed */
+    height: 150px; /* Adjust height as needed */
+    background-color: #3d424e;
+    border: 1px dashed #61dafb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden; /* To contain the image if it loads */
+    flex-shrink: 0;
+}
+
+.image-container img {
+    display: block; /* Prevent extra space below image */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image fills the container without distortion */
+}
+
+/* Notable Indian Astronomers Page Specific Styles */
+.astronomer {
+    margin-bottom: 2em;
+    padding: 1.5em;
+    border-radius: 8px;
+    background-color: rgba(40, 44, 52, 0.8);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.astronomer h3 {
+    color: #5bc0be;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid #5bc0be;
+    padding-bottom: 0.2em;
+}
+
+.astronomer-details {
+    display: flex;
+    gap: 1.5em;
+    align-items: flex-start;
+}
+
+.astronomer-details > div {
+    flex-grow: 1;
+}
+
+.astronomer p {
+    line-height: 1.7;
+    margin-bottom: 0.8em;
+}
+
+.astronomer ul {
+    list-style-type: disc;
+    padding-left: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.astronomer li {
+    line-height: 1.6;
+    margin-bottom: 0.3em;
+}
+
+/* Astronomical Instruments Page Specific Styles */
+.instrument {
+    margin-bottom: 2em;
+    padding: 1.5em;
+    border-radius: 8px;
+    background-color: rgba(40, 44, 52, 0.8);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.instrument h3 {
+    color: #f8b400;
+    margin-top: 0;
+    margin-bottom: 0.8em;
+    border-bottom: 1px solid #f8b400;
+    padding-bottom: 0.3em;
+}
+
+.instrument-details {
+    display: flex;
+    gap: 1.5em;
+    align-items: flex-start;
+}
+
+.instrument-details p {
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Responsive layout for details */
+@media (max-width: 700px) {
+    .instrument-details, .astronomer-details {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .image-container {
+        width: 100%;
+        height: auto;
+        padding-bottom: 75%; /* Maintain aspect ratio (example) */
+        margin-bottom: 1em;
+        position: relative;
+    }
+
+    .image-container img {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+
+.team-member {
+    margin-bottom: 2em;
+    padding: 1.5em;
+    border-radius: 8px;
+    background-color: rgba(40, 44, 52, 0.8);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.team-member h3 {
+    color: #f8b400; /* Using a different accent color for team members */
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid #f8b400;
+    padding-bottom: 0.2em;
+}
+
+.member-details {
+    display: flex;
+    gap: 1.5em;
+    align-items: center;
+}
+
+.member-image {
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    border-radius: 50%; /* Make images circular */
+    overflow: hidden;
+    background-color: #3d424e;
+    border: 1px solid #61dafb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    color: #61dafb;
+    flex-shrink: 0;
+}
+
+.member-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-details p {
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Responsive layout for member details */
+@media (max-width: 600px) {
+    .member-details {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .member-image {
+        margin-bottom: 1em;
+    }
+}

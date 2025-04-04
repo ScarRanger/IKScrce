@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian and Gregorian Calendar</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Indian Contributions in Astronomy</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="coordinates.html">Celestial Coordinates</a></li>
+                <li><a href="calendar.html">Indian Calendar</a></li>
+                <li><a href="instruments.html">Astronomical Instruments</a></li>
+                <li><a href="astronomers.html">Indian Astronomers</a></li>
+                <li><a href="about.html">About Us</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content">
+            <h2>Indian and Gregorian Calendar</h2>
+            <p>
+                <strong>Indian Calendar:</strong> The Hindu calendar, also known as the Panchang, is based on the lunisolar system, incorporating both solar and lunar cycles. It includes months like Chaitra, Vaisakha, and festivals aligned with astronomical events like solstices and equinoxes.
+            </p>
+            <p>
+                <strong>Gregorian Calendar:</strong> Introduced by Pope Gregory XIII in 1582, this solar calendar is used worldwide today. It refined the Julian calendar by adjusting leap years to align more closely with Earth’s orbit around the Sun.
+            </p>
+            <p>
+                <strong>Comparison:</strong> The Indian calendar considers lunar cycles and planetary movements for religious and agricultural purposes, while the Gregorian calendar is purely solar-based and used for civil purposes.
+            </p>
+        </section>
+
+        <section class="content">
+            <h2>Indian to Gregorian Calendar Converter</h2>
+            <div id="calendar-converter">
+                <div class="date-selector">
+                    <label for="indian-year">Year:</label>
+                    <input type="number" id="indian-year" name="indian-year" min="1" value="2023">
+                </div>
+                <div class="date-selector">
+                    <label for="indian-month">Month:</label>
+                    <select id="indian-month" name="indian-month">
+                        <option value="1">Chaitra</option>
+                        <option value="2">Vaisakha</option>
+                        <option value="3">Jyeshtha</option>
+                        <option value="4">Ashadha</option>
+                        <option value="5">Shravana</option>
+                        <option value="6">Bhadrapada</option>
+                        <option value="7">Ashwina</option>
+                        <option value="8">Kartika</option>
+                        <option value="9">Margashirsha</option>
+                        <option value="10">Pausha</option>
+                        <option value="11">Magha</option>
+                        <option value="12">Phalguna</option>
+                    </select>
+                </div>
+                <div class="date-selector">
+                    <label for="indian-day">Day:</label>
+                    <input type="number" id="indian-day" name="indian-day" min="1" max="30" value="1">
+                    <span class="day-helper"></span>
+                </div>
+                <button id="convert-button">Convert to Gregorian</button>
+                <div id="gregorian-result"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 IKS Group 13</p>
+    </footer>
+    <script src="calendar.js"></script>
+</body>
+</html>
