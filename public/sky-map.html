@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Indian Sky Map</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="sky-map.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Interactive Indian Sky Map</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="coordinates.html">Celestial Coordinates</a></li>
+                <li><a href="calendar.html">Indian Calendar</a></li>
+                <li><a href="instruments.html">Astronomical Instruments</a></li>
+                <li><a href="astronomers.html">Indian Astronomers</a></li>
+                <li><a href="sky-map.html" class="active">Sky Map</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <p>Explore the night sky with Nakshatra overlays and ancient Indian mappings.</p>
+        </section>
+
+        <!-- Embedded Stellarium -->
+        <section class="sky-map-container">
+            <iframe
+                id="stellarium"
+                src="https://stellarium-web.org/"
+                allowfullscreen
+                loading="lazy"
+            ></iframe>
+        </section>
+
+        <!-- Overlay for Nakshatras -->
+        <div id="nakshatra-overlay">
+            <!-- Populated dynamically from JS -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 IKS Group 13</p>
+    </footer>
+</body>
+</html>
