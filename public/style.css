@@ -541,12 +541,16 @@ footer {
     margin-top: 0;
     margin-bottom: 0.5em;
     border-bottom: 1px solid #f8b400;
+    justify-content: center;
     padding-bottom: 0.2em;
+    
 }
 
 .member-details {
     display: flex;
     gap: 1.5em;
+    justify-content: center;
+
     align-items: center;
 }
 
@@ -566,18 +570,25 @@ footer {
     font-size: 0.8em;
     color: #61dafb;
     flex-shrink: 0;
+    align-items: center;
+    text-align: center;
 }
 
 .member-image img {
     display: block;
     width: 100%;
     height: 100%;
+    align-items: center;
     object-fit: cover;
+    justify-content: center;
+
+
 }
 
 .member-details p {
     line-height: 1.6;
     margin-bottom: 0;
+    align-items: center;
 }
 
 /* Responsive layout for member details */
@@ -755,4 +766,50 @@ footer {
     font-weight: bold;
     color: #2980b9;
     text-align: center; /* Center the result text */
+}
+
+.content {
+    background-color: rgba(40, 44, 52, 0.8);
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-out;
+}
+
+.content h2.section-title {
+    color: #61dafb;
+    border-bottom: 2px solid #61dafb;
+    padding-bottom: 0.5em;
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+.content p {
+    line-height: 1.8;
+    margin-bottom: 1.5em;
+    text-align: justify;
+}
+
+.content ol {
+    padding-left: 1.5em;
+    margin-bottom: 2em;
+    list-style-position: outside;
+}
+
+.content ul {
+    padding-left: 1.5em;
+    margin-bottom: 2em;
+    list-style-type: disc;
+    list-style-position: outside;
+}
+
+.content li {
+    margin-bottom: 1.2em;
+    line-height: 1.7;
+    padding-left: 0.5em;
+    text-align: left;
+}
+
+.content strong {
+    color: #61dafb;
 }

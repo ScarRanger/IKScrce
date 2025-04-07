@@ -1,12 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astronomical Instruments in India</title>
+    <title>Astronomical Instruments in India - AR Exploration</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        model-viewer {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+            border-radius: 10px;
+            background: #282c34;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        .ar-section h2 {
+            color: #61dafb;
+            margin-top: 0;
+        }
+        .desktop-ar-info {
+            text-align: center;
+            font-style: italic;
+            color: #aaa;
+            margin-top: 10px;
+        }
+        #qr-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: rgba(40, 44, 52, 0.8);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            text-align: center;
+        }
+        #qr-container img {
+            width: 80px;
+            height: 80px;
+            display: block;
+            margin: 0 auto 5px;
+        }
+        #qr-container p {
+            font-size: 0.9em;
+            margin: 0;
+        }
+        .mobile-ar {
+            display: block; /* Show on mobile */
+        }
+        .desktop-ar {
+            display: none; /* Hide on desktop initially */
+        }
+
+        @media (max-width: 768px) { /* Adjust breakpoint as needed */
+            .mobile-ar {
+                display: block;
+            }
+            .desktop-ar {
+                display: none;
+            }
+        }
+
+        @media (min-width: 769px) { /* Adjust breakpoint as needed */
+            .mobile-ar {
+                display: none;
+            }
+            .desktop-ar {
+                display: block;
+            }
+        }
+    </style>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <script defer src="script.js"></script>
+    <script>
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const arSections = document.querySelectorAll('.ar-section');
+            arSections.forEach(section => {
+                const modelViewer = section.querySelector('model-viewer');
+                const desktopInfo = document.createElement('p');
+                desktopInfo.classList.add('desktop-ar-info');
+                desktopInfo.textContent = 'Scan the QR code to open this model in Augmented Reality on your mobile device.';
+
+                if (!isMobileDevice()) {
+                    modelViewer.removeAttribute('ar'); // Remove AR attribute on desktop
+                    modelViewer.removeAttribute('ar-modes');
+                    section.insertBefore(desktopInfo, modelViewer);
+                }
+            });
+
+            const qrContainer = document.getElementById('qr-container');
+            if (!isMobileDevice()) {
+                qrContainer.style.display = 'block'; // Show QR on desktop
+            } else {
+                qrContainer.style.display = 'none'; // Hide QR on mobile
+            }
+        });
+    </script>
 </head>
+
 <body>
     <header>
         <h1>Indian Contributions in Astronomy</h1>
@@ -19,7 +115,7 @@
                 <li><a href="astronomers.html">Indian Astronomers</a></li>
                 <li><a href="sky-map.html">Sky Map</a></li>
                 <li><a href="quiz.html">Quiz</a></li>
-
+                <li><a href="career.html">Career</a></li>
                 <li><a href="about.html">About Us</a></li>
             </ul>
         </nav>
@@ -27,65 +123,82 @@
 
     <main>
         <section class="content">
-            <h2>Astronomical Instruments in India</h2>
+            <h2>Astronomical Instruments in India - AR Exploration</h2>
             <p>
-                Indian astronomers, with their profound understanding of celestial mechanics, developed a variety of sophisticated instruments for observing and measuring the positions and movements of celestial bodies. These instruments played a crucial role in their astronomical calculations and the development of their calendar systems.
+                Explore the fascinating astronomical instruments developed in India through Augmented Reality.
+                Click on the AR button to view the models in your own environment (requires a compatible device).
             </p>
 
-            <div class="instrument">
+            <div class="ar-section">
                 <h3>1. Gnomon (Shanku Yantra)</h3>
                 <div class="instrument-details">
                     <div class="image-container">
                         <img src="images/gnomon.jpeg" alt="Gnomon">
                     </div>
-                    <p>A simple shadow-casting instrument consisting of a vertical rod or pillar. By observing the length and direction of the shadow cast by the Gnomon throughout the day, astronomers could measure time, determine the Sun's altitude, and calculate the local latitude.</p>
+                    <p>A simple shadow-casting instrument used to measure time and the Sun's altitude.</p>
+                    <model-viewer class="mobile-ar" src="models/sundial.glb" ar ar-modes="scene-viewer quick-look webxr"
+                        camera-controls auto-rotate title="Gnomon"></model-viewer>
                 </div>
             </div>
 
-            <div class="instrument">
+            <div class="ar-section">
                 <h3>2. Astrolabe</h3>
                 <div class="instrument-details">
                     <div class="image-container">
                         <img src="images/astrolabe.jpeg" alt="Astrolabe">
                     </div>
-                    <p>The Astrolabe, adopted and further developed by Indian astronomers, was a versatile instrument used for determining the position of celestial objects such as stars and planets. It could also be used for timekeeping, surveying, and navigation.</p>
+                    <p>A versatile instrument used for determining the position of celestial objects and for timekeeping.</p>
+                    <model-viewer class="mobile-ar" src="models/nadi.glb" ar ar-modes="scene-viewer quick-look webxr"
+                        camera-controls auto-rotate title="Astrolabe"></model-viewer>
                 </div>
             </div>
 
-            <div class="instrument">
+            <div class="ar-section">
                 <h3>3. Samrat Yantra</h3>
                 <div class="instrument-details">
                     <div class="image-container">
                         <img src="images/samrat.jpeg" alt="Samrat Yantra">
                     </div>
-                    <p>The Samrat Yantra, meaning "supreme instrument," is a massive equinoctial sundial, most notably found at the Jantar Mantar observatories built by Maharaja Jai Singh II. Its large size and precise markings allowed for the measurement of time with remarkable accuracy, as well as the declination of celestial bodies.</p>
+                    <p>A massive equinoctial sundial used for precise time measurement and determining celestial declinations.</p>
+                    <model-viewer class="mobile-ar" src="models/samrat.glb" ar ar-modes="scene-viewer quick-look webxr"
+                        camera-controls auto-rotate title="Samrat Yantra"></model-viewer>
                 </div>
             </div>
 
-            <div class="instrument">
+            <div class="ar-section">
                 <h3>4. Nadivalaya Yantra</h3>
                 <div class="instrument-details">
                     <div class="image-container">
                         <img src="images/nadivalaya.jpeg" alt="Nadivalaya Yantra">
                     </div>
-                    <p>The Nadivalaya Yantra is an instrument designed to measure the altitude of celestial bodies as they cross the meridian (the imaginary line running from north to south through the zenith). Observations with this instrument helped determine the celestial coordinates of stars and planets.</p>
+                    <p>An instrument designed to measure the altitude of celestial bodies as they cross the meridian.</p>
+                    <model-viewer class="mobile-ar" src="models/astro.glb" ar ar-modes="scene-viewer quick-look webxr"
+                        camera-controls auto-rotate title="Nadivalaya Yantra"></model-viewer>
                 </div>
             </div>
 
-            <div class="instrument">
+            <div class="ar-section">
                 <h3>5. Kapala Yantra</h3>
                 <div class="instrument-details">
                     <div class="image-container">
                         <img src="images/kapala.jpeg" alt="Kapala Yantra">
                     </div>
-                    <p>The Kapala Yantra was a spherical instrument used for observing the positions and apparent motion of planets. Its design allowed astronomers to track the celestial longitude and latitude of planets over time.</p>
+                    <p>A spherical instrument used for observing the positions and apparent motion of planets.</p>
+                    <model-viewer class="mobile-ar" src="models/kapala.glb" ar ar-modes="scene-viewer quick-look webxr"
+                        camera-controls auto-rotate title="Kapala Yantra"></model-viewer>
                 </div>
             </div>
         </section>
     </main>
 
+    <div id="qr-container">
+        <img src="images/qr.png" alt="Open this page on your phone">
+        <p>Scan to explore in AR</p>
+    </div>
+
     <footer>
         <p>&copy; 2025 IKS Group 13</p>
     </footer>
 </body>
+
 </html>
