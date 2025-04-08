@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Astronomical Instruments in India - AR Exploration</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <style>
         model-viewer {
             width: 100%;
@@ -13,18 +13,36 @@
             margin: 20px 0;
             border-radius: 10px;
             background: #282c34;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
+
+        model-viewer::part(ar-button) {
+            background-color: #ffd700;
+            color: #000;
+            border-radius: 20px;
+            padding: 10px 16px;
+            font-weight: bold;
+        }
+
+        /* Hide AR button on desktop */
+        @media (min-width: 769px) {
+            model-viewer::part(ar-button) {
+                display: none;
+            }
+        }
+
         .ar-section h2 {
             color: #61dafb;
             margin-top: 0;
         }
+
         .desktop-ar-info {
             text-align: center;
             font-style: italic;
             color: #aaa;
             margin-top: 10px;
         }
+
         #qr-container {
             position: fixed;
             bottom: 20px;
@@ -36,41 +54,20 @@
             z-index: 100;
             text-align: center;
         }
+
         #qr-container img {
             width: 80px;
             height: 80px;
             display: block;
             margin: 0 auto 5px;
         }
+
         #qr-container p {
             font-size: 0.9em;
             margin: 0;
         }
-        .mobile-ar {
-            display: block; /* Show on mobile */
-        }
-        .desktop-ar {
-            display: none; /* Hide on desktop initially */
-        }
-
-        @media (max-width: 768px) { /* Adjust breakpoint as needed */
-            .mobile-ar {
-                display: block;
-            }
-            .desktop-ar {
-                display: none;
-            }
-        }
-
-        @media (min-width: 769px) { /* Adjust breakpoint as needed */
-            .mobile-ar {
-                display: none;
-            }
-            .desktop-ar {
-                display: block;
-            }
-        }
     </style>
+
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <script defer src="script.js"></script>
     <script>
@@ -78,21 +75,7 @@
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const arSections = document.querySelectorAll('.ar-section');
-            arSections.forEach(section => {
-                const modelViewer = section.querySelector('model-viewer');
-                const desktopInfo = document.createElement('p');
-                desktopInfo.classList.add('desktop-ar-info');
-                desktopInfo.textContent = 'Scan the QR code to open this model in Augmented Reality on your mobile device.';
-
-                if (!isMobileDevice()) {
-                    modelViewer.removeAttribute('ar'); // Remove AR attribute on desktop
-                    modelViewer.removeAttribute('ar-modes');
-                    section.insertBefore(desktopInfo, modelViewer);
-                }
-            });
-
+        document.addEventListener('DOMContentLoaded', function () {
             const qrContainer = document.getElementById('qr-container');
             if (!isMobileDevice()) {
                 qrContainer.style.display = 'block'; // Show QR on desktop
@@ -133,11 +116,12 @@
                 <h3>1. Gnomon (Shanku Yantra)</h3>
                 <div class="instrument-details">
                     <div class="image-container">
-                        <img src="images/gnomon.jpeg" alt="Gnomon">
+                        <img src="images/gnomon.jpeg" alt="Gnomon" />
                     </div>
                     <p>A simple shadow-casting instrument used to measure time and the Sun's altitude.</p>
-                    <model-viewer class="mobile-ar" src="models/sundial1.glb" ar ar-modes="scene-viewer quick-look webxr"
-                        camera-controls auto-rotate title="Gnomon"></model-viewer>
+                    <model-viewer src="models/sundial.glb" ar ar-modes="scene-viewer quick-look webxr" camera-controls
+                        auto-rotate title="Gnomon" alt="3D model of Gnomon">
+                    </model-viewer>
                 </div>
             </div>
 
@@ -145,11 +129,13 @@
                 <h3>2. Astrolabe</h3>
                 <div class="instrument-details">
                     <div class="image-container">
-                        <img src="images/astrolabe.jpeg" alt="Astrolabe">
+                        <img src="images/astrolabe.jpeg" alt="Astrolabe" />
                     </div>
-                    <p>A versatile instrument used for determining the position of celestial objects and for timekeeping.</p>
-                    <model-viewer class="mobile-ar" src="models/astrolabe.glb" ar ar-modes="scene-viewer quick-look webxr"
-                        camera-controls auto-rotate title="Astrolabe"></model-viewer>
+                    <p>A versatile instrument used for determining the position of celestial objects and for
+                        timekeeping.</p>
+                    <model-viewer src="models/astro1.glb" ar ar-modes="scene-viewer quick-look webxr" camera-controls
+                        auto-rotate title="Astrolabe" alt="3D model of Astrolabe">
+                    </model-viewer>
                 </div>
             </div>
 
@@ -157,11 +143,13 @@
                 <h3>3. Samrat Yantra</h3>
                 <div class="instrument-details">
                     <div class="image-container">
-                        <img src="images/samrat.jpeg" alt="Samrat Yantra">
+                        <img src="images/samrat.jpeg" alt="Samrat Yantra" />
                     </div>
-                    <p>A massive equinoctial sundial used for precise time measurement and determining celestial declinations.</p>
-                    <model-viewer class="mobile-ar" src="models/samrat.glb" ar ar-modes="scene-viewer quick-look webxr"
-                        camera-controls auto-rotate title="Samrat Yantra"></model-viewer>
+                    <p>A massive equinoctial sundial used for precise time measurement and determining celestial
+                        declinations.</p>
+                    <model-viewer src="models/samrat.glb" ar ar-modes="scene-viewer quick-look webxr" camera-controls
+                        auto-rotate title="Samrat Yantra" alt="3D model of Samrat Yantra">
+                    </model-viewer>
                 </div>
             </div>
 
@@ -169,11 +157,13 @@
                 <h3>4. Nadivalaya Yantra</h3>
                 <div class="instrument-details">
                     <div class="image-container">
-                        <img src="images/nadivalaya.jpeg" alt="Nadivalaya Yantra">
+                        <img src="images/nadivalaya.jpeg" alt="Nadivalaya Yantra" />
                     </div>
-                    <p>An instrument designed to measure the altitude of celestial bodies as they cross the meridian.</p>
-                    <model-viewer class="mobile-ar" src="models/nadivalya.glb" ar ar-modes="scene-viewer quick-look webxr"
-                        camera-controls auto-rotate title="Nadivalaya Yantra"></model-viewer>
+                    <p>An instrument designed to measure the altitude of celestial bodies as they cross the meridian.
+                    </p>
+                    <model-viewer src="models/nadivalya.glb" ar ar-modes="scene-viewer quick-look webxr" camera-controls
+                        auto-rotate title="Nadivalaya Yantra" alt="3D model of Nadivalaya Yantra">
+                    </model-viewer>
                 </div>
             </div>
 
@@ -181,18 +171,19 @@
                 <h3>5. Kapala Yantra</h3>
                 <div class="instrument-details">
                     <div class="image-container">
-                        <img src="images/kapala.jpeg" alt="Kapala Yantra">
+                        <img src="images/kapala.jpeg" alt="Kapala Yantra" />
                     </div>
                     <p>A spherical instrument used for observing the positions and apparent motion of planets.</p>
-                    <model-viewer class="mobile-ar" src="models/kapala.glb" ar ar-modes="scene-viewer quick-look webxr"
-                        camera-controls auto-rotate title="Kapala Yantra"></model-viewer>
+                    <model-viewer src="models/kapala.glb" ar ar-modes="scene-viewer quick-look webxr" camera-controls
+                        auto-rotate title="Kapala Yantra" alt="3D model of Kapala Yantra">
+                    </model-viewer>
                 </div>
             </div>
         </section>
     </main>
 
     <div id="qr-container">
-        <img src="images/qr.png" alt="Open this page on your phone">
+        <img src="images/qr.png" alt="Open this page on your phone" />
         <p>Scan to explore in AR</p>
     </div>
 
